@@ -9,4 +9,6 @@ urlpatterns = [
     
     # Main page
     path('', views.index, name='index'),
+    # Topics page
+    path('topics/', views.topics, name='topics'),
 ]
