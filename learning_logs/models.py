@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Topic(models.Model):
@@ -8,6 +9,8 @@ class Topic(models.Model):
 
     # Automatically added current date and time to topic
     date_added = models.DateTimeField(auto_now_add=True)
+
+    owner = models.ForeignKey(User,on_delete=models.CASCADE)
 
     def __str__(self):
         """ Model representation as string"""
